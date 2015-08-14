@@ -12,8 +12,7 @@
 # sudo update-rc.d pifaceshutdown stop 99 0 .
 
 LOCKFILE="/var/lock/pifacecad_status_service.lock"
-SYSINFO_FILE="/usr/share/doc/python3-pifacecad/examples/sysinfo.py"
-SCRIPT_FILE="/home/pi/CAD-cg/ShutdownMessage.py"
+SCRIPT_FILE="/home/pi/KV-pifacecad/ShutdownMessageKV.py"
 
 start() {
         echo "PiFace CAD shutdown message no action on start"
