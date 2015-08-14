@@ -1,0 +1,56 @@
+### BEGIN INIT INFO
+# Provides: pifacecadshutdown
+# Required-Start:
+# Required-Stop:
+# X-Stop-After:      umountroot
+# Default-Start:
+# Default-Stop:      0
+# Short-Description: Displays a shutdown message on the PiFace.
+# Description:       Displays a shutdown message on the PiFace.
+### END INIT INFO
+
+# sudo update-rc.d pifaceshutdown stop 99 0 .
+
+LOCKFILE="/var/lock/pifacecad_status_service.lock"
+SYSINFO_FILE="/usr/share/doc/python3-pifacecad/examples/sysinfo.py"
+SCRIPT_FILE="/home/pi/CAD-cg/ShutdownMessage.py"
+
+start() {
+        echo "PiFace CAD shutdown message no action on start"
+}
+
+stop() {
+        echo -n "Displaying PiFace CAD shutdown message: "
+        /usr/bin/python3 $SCRIPT_FILE
+        echo "[Complete]"
+}
+
+status() {
+        if [ -e $LOCKFILE ]
+        then
+            echo "[Running]"
+        else
+            echo "[Stopped]"
+        fi
+}
+
+### main logic ###
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  status)
+        status
+        ;;
+  restart|reload|force-reload)
+        stop
+        start
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart|reload|force-reload|status}"
+        exit 1
+esac
+exit 0
