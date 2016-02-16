@@ -9,7 +9,7 @@
 # Description:       Displays a shutdown message on the PiFace.
 ### END INIT INFO
 
-LOCKFILE="/var/lock/pifacecad_status_service.lock"
+LOCKFILE="/var/lock/pifacecad_shutdown_message.lock"
 SCRIPT_FILE="/home/pi/KV-pifacecad/ShutdownMessageKV.py"
 
 start() {
