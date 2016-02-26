@@ -4,7 +4,7 @@
 # Required-Start:
 # Required-Stop:
 # X-Stop-After:      umountroot
-# Default-Start:
+# Default-Start:     2 3 4 5
 # Default-Stop:      0
 # Short-Description: Displays a shutdown message on the PiFace.
 # Description:       Displays a shutdown message on the PiFace.
@@ -14,6 +14,7 @@ LOCKFILE="/var/lock/pifacecad_shutdown_message.lock"
 SCRIPT_FILE="/home/pi/KV-pifacecad/ShutdownMessageKV.py"
 
 start() {
+		# Debian Jessie (systemd) : must run something on boot
         echo "PiFace CAD shutdown message no action on start"
 }
 
