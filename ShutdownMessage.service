@@ -1,0 +1,11 @@
+[Unit]
+Description=Display message at shutdown complete on pifacecad
+Before=shutdown.target
+
+[Service]
+ExecStart=/bin/true
+ExecStop=/usr/bin/python3 /home/pi/KV-pifacecad/ShutdownMessageKV.py
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
