@@ -24,10 +24,20 @@ From http://swindon.hackspace.org.uk/blog/piface-shutdown-message/
 Install by : 
 *Make sure the path to SCRIPT_FILE is correct in pifacecadshutdown*
 ```
-sudo cp pifacecadshutdown /etc/init.d/
+sudo cp etc/pifacecadshutdown /etc/init.d/
 sudo chmod +x /etc/init.d/pifacecadshutdown
-sudo update-rc.d pifacecadshutdown stop 99 0 .
+sudo update-rc.d pifacecadshutdown default
 ```
+
+Jessie alternative : 
+*Make sure the path to SCRIPT_FILE is correct in ShutdownMessage.service*
+```
+sudo cp etc/ShutdownMessage.service /etc/systemd/system
+sudo chmod +x /etc/systemd/system/ShutdownMessage.service
+sudo systemctl enable ShutdownMessage.service
+```
+
+NOTE : Raspbian Jessie can use both methods, the first seems to schedule the script slightly later.  For troubleshooting, see etc/Jessie.md in this repo.
 
 <h3>sysinfo adv(anced)</h3>
 Builds from the modified sysinfo.
