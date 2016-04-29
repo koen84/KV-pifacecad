@@ -26,7 +26,7 @@ Install by :
 ```
 sudo cp etc/pifacecadshutdown /etc/init.d/
 sudo chmod +x /etc/init.d/pifacecadshutdown
-sudo update-rc.d pifacecadshutdown default
+sudo update-rc.d pifacecadshutdown defaults
 ```
 
 Jessie alternative : 
