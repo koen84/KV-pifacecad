@@ -104,6 +104,9 @@ def button_press(event):
 	if event.pin_num == 0 :
 		show_sysinfo()
 
+	# freespace
+	if event.pin_num == 1 :
+		show_freespace()
 
 # shutdown function
 def cmd_shutdown():
@@ -215,6 +218,13 @@ def show_sysinfo():
 	sleep(INFO_TIME)
 	display_default()
 
+def show_freespace():
+	# init
+	cad.lcd.clear()
+	cad.lcd.display_on()
+	cad.lcd.backlight_on()
+	BACKLIGHT = True
+	cad.lcd.write("Checking space..")
 
 ### MAIN function
 
