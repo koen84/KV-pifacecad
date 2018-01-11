@@ -53,9 +53,9 @@ Builds from the modified sysinfo.
 (DEBUG : also displays button number when pressed.)
 
 Install by : as above OR
-*Make sure the path to SCRIPT_FILE is correct in pifacecadshutdown*
+*Make sure the path to SCRIPT_FILE is correct in pifacecadsysinfoadv*
 ```
-sudo cp /etc/init.d/pifacecadsysinfo /etc/init.d/pifacecadsysinfoadv
-sudo nano /etc/init.d/pifacecadsysinfoadv
+sudo cp etc/pifacecadsysinfoadv /etc/init.d/pifacecadsysinfoadv
+sudo chmod +x /etc/init.d/pifacecadsysinfoadv
 sudo update-rc.d pifacecadsysinfoadv defaults
 ```

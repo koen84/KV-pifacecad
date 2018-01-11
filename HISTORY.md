@@ -2,6 +2,10 @@
 
 My personal collection of essential pifacecad scripts
 
+<h3>V0.4</h3>
+* Included etc/pifacecadsysinfoadv
+* Updated README.md for sysinfoadv (cp & chmod +x)
+
 <h3>V0.3</h3>
 * Modified to support raspbian Jessie, both sysV and systemd
 * Moved init and unit file to etc/ (also with extra Jessie documentation)
