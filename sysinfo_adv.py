@@ -159,7 +159,7 @@ atexit.register(stop_routine)
 GET_IP_CMD =  "/sbin/ip -4 -o addr show dev eth0 | grep -v eth0: | awk '{split($4,a,\"/\");print a[1]}'"
 GET_TEMP_CMD = "/opt/vc/bin/vcgencmd measure_temp"
 TOTAL_MEM_CMD = "free | grep 'Mem' | awk '{print $2}'"
-USED_MEM_CMD = "free | grep '\-\/+' | awk '{print $3}'"
+USED_MEM_CMD = "free | grep 'Mem' | awk '{print $3}'"
 
 
 ## sysinfo - custom symbols

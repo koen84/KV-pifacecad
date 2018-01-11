@@ -2,6 +2,9 @@
 
 My personal collection of essential pifacecad scripts
 
+<h3>V0.5</h3>
+* FIX used memory (PR26)
+
 <h3>V0.4</h3>
 * Included etc/pifacecadsysinfoadv
 * Updated README.md for sysinfoadv (cp & chmod +x)
