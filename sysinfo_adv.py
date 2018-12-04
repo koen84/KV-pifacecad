@@ -164,7 +164,7 @@ GET_IP_CMD =  "ip route get 1 | awk '{print $NF;exit}'"
 GET_TEMP_CMD = "/opt/vc/bin/vcgencmd measure_temp"
 TOTAL_MEM_CMD = "free | grep 'Mem' | awk '{print $2}'"
 USED_MEM_CMD = "free | grep 'Mem' | awk '{print $3}'"
-SET_IP_CMD = "/home/pi/scripts_admin/ip.sh"
+SET_IP_CMD = "sudo /home/pi/scripts_admin/ip.sh"
 
 ## sysinfo - custom symbols
 temperature_symbol = pifacecad.LCDBitmap(

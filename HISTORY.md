@@ -4,6 +4,8 @@ My personal collection of essential pifacecad scripts
 
 <h3>V0.5</h3>
 * FIX used memory (PR26)
+* FIX get IP by route for multiple addresses
+* ADD run /home/pi/scripts_admin/ip.sh by button 3
 
 <h3>V0.4</h3>
 * Included etc/pifacecadsysinfoadv
