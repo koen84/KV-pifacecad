@@ -6,9 +6,9 @@
 
 ### button functions
 # 0 (left) :		show sysinfo
-# 1 (2nd left) :	
+# 1 (2nd left) :	show freespace
 # 2 (middle) :		
-# 3 (2nd right) :
+# 3 (2nd right) :	set IP address
 # 4 (right) :		toggle display
 
 # 5 (top press) :	shutdown initiate and shutdown confirm
@@ -107,6 +107,10 @@ def button_press(event):
 	# freespace
 	if event.pin_num == 1 :
 		show_freespace()
+		
+	# setIP
+	if event.pin_num == 3 :
+		set_IP()
 
 # shutdown function
 def cmd_shutdown():
@@ -160,7 +164,7 @@ GET_IP_CMD =  "ip route get 1 | awk '{print $NF;exit}'"
 GET_TEMP_CMD = "/opt/vc/bin/vcgencmd measure_temp"
 TOTAL_MEM_CMD = "free | grep 'Mem' | awk '{print $2}'"
 USED_MEM_CMD = "free | grep 'Mem' | awk '{print $3}'"
-
+SET_IP_CMD = "/home/pi/scripts_admin/ip.sh"
 
 ## sysinfo - custom symbols
 temperature_symbol = pifacecad.LCDBitmap(
@@ -226,6 +230,22 @@ def show_freespace():
 	BACKLIGHT = True
 	cad.lcd.write("Checking space..")
 
+def set_IP():
+	# init
+	cad.lcd.clear()
+	cad.lcd.display_on()
+	cad.lcd.backlight_on()
+	BACKLIGHT = True
+	cad.lcd.write("Setting IP+gw..")
+	
+	# run ip.sh
+	output_cmd(SET_IP_CMD)
+	
+	# display new IP
+	sysinfo_wait_ip()
+	cad.lcd.set_cursor(0, 1)
+	cad.lcd.write("{}\n".format(sysinfo_get_ip()))
+	
 ### MAIN function
 
 if __name__ == "__main__":
